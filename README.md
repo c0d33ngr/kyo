@@ -1294,7 +1294,7 @@ val i: Unit < Any =
 
 // Fold over stream elements
 val j: Int < Any =
-    a.fold(0)(_ + _)
+    a.fod(0)(_ + _)
 
 // Process each element with side effects
 val k: Unit < (IO & Abort[IOException]) =
