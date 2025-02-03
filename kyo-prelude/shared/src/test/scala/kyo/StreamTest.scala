@@ -687,18 +687,18 @@ class StreamTest extends Test:
         }
     }
 
-    "discardValue" - {
+    "discard" - {
         "non-empty stream" in {
             assert(
                 Var.run(0) {
-                    Stream.init(0 until 100).map(i => Var.update[Int](_ + i)).discardValue.andThen(Var.get[Int])
+                    Stream.init(0 until 100).map(i => Var.update[Int](_ + i)).discard.andThen(Var.get[Int])
                 }.eval == 4950
             )
         }
 
         "empty stream" in {
             assert(
-                Stream.init(Seq.empty[Int]).discardValue.eval == ()
+                Stream.init(Seq.empty[Int]).discard.eval == ()
             )
         }
     }

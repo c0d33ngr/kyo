@@ -409,7 +409,7 @@ sealed abstract class Stream[V, -S]:
       * @return
       *   A unit effect that runs the stream without collecting results
       */
-    def discardValue(using tag: Tag[Emit[Chunk[V]]], frame: Frame): Unit < S =
+    def discard(using tag: Tag[Emit[Chunk[V]]], frame: Frame): Unit < S =
         ArrowEffect.handle(tag, emit)(
             [C] => (input, cont) => cont(())
         )
