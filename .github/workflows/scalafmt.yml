@@ -2,10 +2,10 @@ name: scalafmt
 on:
   push:
     branches:
-      - main
+      - main-test
   pull_request:
     branches:
-      - main
+      - main-test
 jobs:
   publish:
     runs-on: ubuntu-20.04
